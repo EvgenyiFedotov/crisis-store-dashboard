@@ -2,10 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import "normalize.css";
+import { GlobalStyle } from "./global-style";
+import { ThemeProvider } from "styled-components";
+import { dark } from "./theme";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={dark}>
+      <GlobalStyle />
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
