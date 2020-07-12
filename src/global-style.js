@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     outline: none;
+    line-height: ${(props) => `${props.theme.lineHeight}px`};
   }
 
   html, body {
@@ -15,8 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-size: 16px;
-    background-color: var(--bg-color);
+    font-size: ${(props) => `${props.theme.fontSize.normal}px`};
     overflow-y: auto;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
