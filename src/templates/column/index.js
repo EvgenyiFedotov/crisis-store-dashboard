@@ -5,7 +5,7 @@ export const Column = styled.div`
   display: flex;
   flex: none;
   flex-direction: column;
-  padding: ${getPadding()};
+  ${getPadding()}
 
   & > *:not(:last-child) {
     margin-bottom: ${getStep()};

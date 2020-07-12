@@ -12,34 +12,21 @@ const large = css`
 `;
 
 const primary = css`
-  background-color: ${getThemeValue(({ colors }) => colors.primary)};
-  color: ${getThemeValue(({ colors }) => colors.text)};
+  color: ${getThemeValue(({ colors }) => colors.primary)};
 `;
 
-const info = css`
-  background-color: ${getThemeValue(({ colors }) => colors.info)};
-  color: ${getThemeValue(({ colors }) => colors.text)};
-`;
-
-const disabled = css`
-  &:disabled {
-    opacity: 0.5;
-    cursor: initial;
-  }
-`;
-
-export const Button = styled.button`
+export const ButtonLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
-  border-radius: ${getThemeValue("borderRadius")}px;
   outline: none;
   padding: 4px 8px;
   height: 30px;
   cursor: pointer;
+  text-align: center;
+  color: ${getThemeValue(({ colors }) => colors.text)};
 
-${disabled}
   ${getSize({ small, large })}
-  ${getColorByType({ primary, info })}
+  ${getColorByType({ primary })}
 `;

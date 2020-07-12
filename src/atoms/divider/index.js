@@ -6,9 +6,7 @@ export const Divider = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  line-height: 24px;
   white-space: nowrap;
-  width: 100%;
 
   &::before {
     content: "";
