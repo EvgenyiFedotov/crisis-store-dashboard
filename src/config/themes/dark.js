@@ -11,8 +11,8 @@ export const themeDark = {
     leftMenuItem: {
       background: "#00968800",
       color: "#f7faff",
-      hover: { background: "#009688" },
-      active: { background: "#009688" },
+      hover: { background: "#009688", color: "#14181f" },
+      active: { background: "#009688", color: "#14181f" },
     },
     packageCard: {
       background: "#1e232b",

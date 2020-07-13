@@ -10,8 +10,8 @@ export const themeLight = {
     info: "#00bcd4",
     leftMenuItem: {
       color: "#14181f",
-      hover: { background: "#009688" },
-      active: { background: "#009688" },
+      hover: { background: "#009688", color: "#f7faff" },
+      active: { background: "#009688", color: "#f7faff" },
     },
     packageCard: {
       background: "#e7ebf1",

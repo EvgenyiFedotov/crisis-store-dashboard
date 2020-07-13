@@ -80,15 +80,15 @@ const StyledLeftMenuItem = styled(Link)`
 
   &:hover {
     background-color: ${getThemeValue(
-      "colors",
-      ({ leftMenuItem }) => leftMenuItem.hover.background
+      ({ colors }) => colors.leftMenuItem.hover.background
     )};
+    color: ${getThemeValue(({ colors }) => colors.leftMenuItem.hover.color)};
   }
 
   &[data-active="true"] {
     background-color: ${getThemeValue(
-      "colors",
-      ({ leftMenuItem }) => leftMenuItem.active.background
+      ({ colors }) => colors.leftMenuItem.active.background
     )};
+    color: ${getThemeValue(({ colors }) => colors.leftMenuItem.active.color)};
   }
 `;
