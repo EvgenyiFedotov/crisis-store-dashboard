@@ -2,9 +2,15 @@ import * as ef from "effector";
 import { themes } from "../../config";
 
 // Contstants
-const IS_DARK =
-  window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches;
+let IS_DARK = false;
+
+try {
+  IS_DARK =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+} catch (error) {
+  // pass
+}
 
 // Events
 const changeThemeName = ef.createEvent();
@@ -14,11 +20,13 @@ export const $themeName = ef.createStore(getThemeName());
 export const $theme = $themeName.map(getTheme);
 
 // Depends [change theme in system]
-window
-  .matchMedia("(prefers-color-scheme: dark)")
-  .addEventListener("change", (event) => {
+try {
+  window.matchMedia("(prefers-color-scheme: dark)").addListener((event) => {
     changeThemeName(event.matches ? "dark" : "light");
   });
+} catch (error) {
+  // pass
+}
 
 // Depends [change $theme]
 $themeName.on(changeThemeName, (_, nextTheme) => nextTheme);
