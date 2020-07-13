@@ -60,3 +60,27 @@ export function getColorByType(colors = {}) {
     }
   };
 }
+
+export function getMargin(defaultMargin = []) {
+  return ({ margin = defaultMargin, theme }) => {
+    const marginString = margin
+      .map((item) => `${item * theme.step}px`)
+      .join(" ");
+
+    return css`
+      margin: ${marginString};
+    `;
+  };
+}
+
+export function getHover(hoverCss, defaultHover = true) {
+  return ({ hover = defaultHover }) => {
+    if (hover) {
+      return css`
+        &:hover {
+          ${hoverCss}
+        }
+      `;
+    }
+  };
+}

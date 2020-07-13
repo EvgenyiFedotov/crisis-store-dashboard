@@ -3,7 +3,6 @@ import styled from "styled-components";
 import * as templates from "../../templates";
 import { useList } from "effector-react";
 import * as atoms from "../../atoms";
-import * as ri from "react-icons/ri";
 import { Route } from "react-router-dom";
 
 import * as model from "./model";
@@ -26,37 +25,33 @@ function Packages() {
     />
   ));
 
-  return <templates.Row>{packages}</templates.Row>;
+  return <templates.Row step={2}>{packages}</templates.Row>;
 }
 
 function PackageCard({ size, month, status, disabled }) {
   return (
-    <atoms.Card.Container>
-      <atoms.Card.RowInfo>
-        <atoms.Card.TitleInfo>Size:</atoms.Card.TitleInfo>
+    <templates.Card.Container>
+      <templates.Card.RowInfo>
+        <templates.Card.TitleInfo>Size:</templates.Card.TitleInfo>
         <div>{size}</div>
-      </atoms.Card.RowInfo>
+      </templates.Card.RowInfo>
 
-      <atoms.Card.RowInfo>
-        <atoms.Card.TitleInfo>Month:</atoms.Card.TitleInfo>
+      <templates.Card.RowInfo>
+        <templates.Card.TitleInfo>Month:</templates.Card.TitleInfo>
         <div>{month}</div>
-      </atoms.Card.RowInfo>
+      </templates.Card.RowInfo>
 
-      <atoms.Card.RowInfo>
-        <atoms.Card.TitleInfo>Status:</atoms.Card.TitleInfo>
+      <templates.Card.RowInfo>
+        <templates.Card.TitleInfo>Status:</templates.Card.TitleInfo>
         <div>{status}</div>
-      </atoms.Card.RowInfo>
+      </templates.Card.RowInfo>
 
-      <templates.Row>
+      <StyledCardButtons>
         <StyledDilevery type="primary" disabled={disabled}>
           Delivery
         </StyledDilevery>
-
-        <atoms.ButtonLink>
-          <ri.RiInformationLine />
-        </atoms.ButtonLink>
-      </templates.Row>
-    </atoms.Card.Container>
+      </StyledCardButtons>
+    </templates.Card.Container>
   );
 }
 
@@ -67,4 +62,10 @@ const StyledRightContent = styled(templates.Column)`
 
 const StyledDilevery = styled(atoms.Button)`
   flex: 1;
+`;
+
+const StyledCardButtons = styled(templates.Row)`
+  position: absolute;
+  bottom: -12px;
+  right: 12px;
 `;

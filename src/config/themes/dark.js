@@ -1,4 +1,7 @@
-export const dark = {
+import { themeBase } from "./base";
+
+export const themeDark = {
+  ...themeBase,
   colors: {
     text: "#f7faff",
     background: "#14181f",
@@ -11,13 +14,10 @@ export const dark = {
       hover: { background: "#009688" },
       active: { background: "#009688" },
     },
-    packageCard: { background: "#1e232b", border: "#282f3a" },
-  },
-  lineHeight: 24, // px
-  fontSize: { small: 14, normal: 16, large: 18 }, // px
-  step: 16, // px
-  borderRadius: 10, // px
-  zIndex: {
-    pageMainContent: 1000,
+    packageCard: {
+      background: "#1e232b",
+      border: "#242b33",
+      hover: { background: "#242b33" },
+    },
   },
 };

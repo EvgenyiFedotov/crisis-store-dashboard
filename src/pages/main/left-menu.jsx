@@ -2,7 +2,6 @@ import * as React from "react";
 import * as templates from "../../templates";
 import styled from "styled-components";
 import { getThemeValue, getPadding, getStep } from "../../lib/styled";
-import { dark } from "../../theme";
 import * as ri from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
 
@@ -68,7 +67,7 @@ function LeftMenuItem({ icon, title, to = "", value, onClick }) {
 // Styled
 const StyledLeftMenuItem = styled(Link)`
   cursor: pointer;
-  width: ${getStep(12)({ theme: dark })};
+  width: ${getStep(12)};
   ${getPadding([0.5, 1])};
   border: 0;
   border-radius: ${getThemeValue("borderRadius")}px;

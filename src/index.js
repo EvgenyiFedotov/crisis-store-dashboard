@@ -4,15 +4,14 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "normalize.css";
 import { GlobalStyle } from "./global-style";
-import { ThemeProvider } from "styled-components";
-import { dark } from "./theme";
+import { Theme } from "./features/theme";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={dark}>
+    <Theme>
       <GlobalStyle />
       <App />
-    </ThemeProvider>
+    </Theme>
   </React.StrictMode>,
   document.getElementById("root")
 );
