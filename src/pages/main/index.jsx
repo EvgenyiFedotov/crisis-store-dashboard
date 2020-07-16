@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as atoms from "../../atoms";
 import styled from "styled-components";
-import { getThemeValue } from "../../lib/styled";
+import { tv } from "../../lib/styled";
 
 import { LeftMenu } from "./left-menu";
 import { RightContent } from "./right-content";
@@ -40,9 +40,9 @@ const StyledHeader = styled(atoms.Row)`
   top: 0;
   left: 0;
   width: 100%;
-  z-index: ${getThemeValue("zIndex", ({ pageMainContent }) => pageMainContent)};
+  z-index: ${tv("zIndex.pageMainContent")};
   justify-content: space-between;
-  background-color: ${getThemeValue("colors", ({ primary }) => primary)};
+  background-color: ${tv("colors.primary")};
 `;
 
 const StyledContent = styled(atoms.Row)`

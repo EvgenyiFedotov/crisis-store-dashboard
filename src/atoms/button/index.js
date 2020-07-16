@@ -1,25 +1,27 @@
 import styled, { css } from "styled-components";
-import { getSize, getThemeValue, getColorByType } from "../../lib/styled";
+import { getSize, tv, getColor } from "../../lib/styled";
 
-const small = css`
-  height: 24px;
-  font-size: ${getThemeValue("fontSize", ({ small }) => small)}px;
-`;
+const sizes = {
+  small: css`
+    height: 24px;
+    font-size: ${tv("fontSize.small")}px;
+  `,
+  large: css`
+    height: 34px;
+    font-size: ${tv("fontSize.large")}px;
+  `,
+};
 
-const large = css`
-  height: 34px;
-  font-size: ${getThemeValue("fontSize", ({ large }) => large)}px;
-`;
-
-const primary = css`
-  background-color: ${getThemeValue(({ colors }) => colors.primary)};
-  color: ${getThemeValue(({ colors }) => colors.text)};
-`;
-
-const info = css`
-  background-color: ${getThemeValue(({ colors }) => colors.info)};
-  color: ${getThemeValue(({ colors }) => colors.text)};
-`;
+const colors = {
+  primary: css`
+    background-color: ${tv("colors.primary")};
+    color: ${tv("colors.text")};
+  `,
+  info: css`
+    background-color: ${tv("colors.info")};
+    color: ${tv("colors.text")};
+  `,
+};
 
 const disabled = css`
   &:disabled {
@@ -33,13 +35,13 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   border: none;
-  border-radius: ${getThemeValue("borderRadius")}px;
+  border-radius: ${tv("borderRadius")}px;
   outline: none;
   padding: 4px 8px;
   height: 30px;
   cursor: pointer;
 
-${disabled}
-  ${getSize({ small, large })}
-  ${getColorByType({ primary, info })}
+  ${disabled}
+  ${getSize(sizes)}
+  ${getColor(colors)}
 `;

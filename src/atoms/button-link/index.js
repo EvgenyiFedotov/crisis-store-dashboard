@@ -1,19 +1,22 @@
 import styled, { css } from "styled-components";
-import { getSize, getThemeValue, getColorByType } from "../../lib/styled";
+import { getSize, tv, getColor } from "../../lib/styled";
 
-const small = css`
-  height: 24px;
-  font-size: ${getThemeValue("fontSize", ({ small }) => small)}px;
-`;
+const sizes = {
+  small: css`
+    height: 24px;
+    font-size: ${tv("fontSize.small")}px;
+  `,
+  large: css`
+    height: 34px;
+    font-size: ${tv("fontSize.large")}px;
+  `,
+};
 
-const large = css`
-  height: 34px;
-  font-size: ${getThemeValue("fontSize", ({ large }) => large)}px;
-`;
-
-const primary = css`
-  color: ${getThemeValue(({ colors }) => colors.primary)};
-`;
+const colors = {
+  primary: css`
+    color: ${tv("colors.primary")};
+  `,
+};
 
 export const ButtonLink = styled.a`
   display: flex;
@@ -25,8 +28,8 @@ export const ButtonLink = styled.a`
   height: 30px;
   cursor: pointer;
   text-align: center;
-  color: ${getThemeValue(({ colors }) => colors.text)};
+  color: ${tv("colors.text")};
 
-  ${getSize({ small, large })}
-  ${getColorByType({ primary })}
+  ${getSize(sizes)}
+  ${getColor(colors)}
 `;

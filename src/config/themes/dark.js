@@ -5,7 +5,7 @@ export const themeDark = {
   colors: {
     text: "#f7faff",
     background: "#14181f",
-    dividerLine: "#f7faff",
+    divider: { line: "#f7faff" },
     primary: "#009688",
     info: "#00bcd4",
     leftMenuItem: {

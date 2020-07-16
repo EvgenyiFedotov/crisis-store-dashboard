@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { getThemeValue, getPadding, getStep } from "../../lib/styled";
+import { tv, getPadding, getStep } from "../../lib/styled";
 import * as ri from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
 import * as atoms from "../../atoms";
@@ -70,25 +70,18 @@ const StyledLeftMenuItem = styled(Link)`
   width: ${getStep(12)};
   ${getPadding([0.5, 1])};
   border: 0;
-  border-radius: ${getThemeValue("borderRadius")}px;
-  background-color: ${getThemeValue(
-    "colors",
-    ({ leftMenuItem }) => leftMenuItem.background
-  )};
-  color: ${getThemeValue("colors", ({ leftMenuItem }) => leftMenuItem.color)};
+  border-radius: ${tv("borderRadius")}px;
+  background-color: ${tv("colors.leftMenuItem.background")};
+  color: ${tv("colors.leftMenuItem.color")};
   text-decoration: none;
 
   &:hover {
-    background-color: ${getThemeValue(
-      ({ colors }) => colors.leftMenuItem.hover.background
-    )};
-    color: ${getThemeValue(({ colors }) => colors.leftMenuItem.hover.color)};
+    background-color: ${tv("colors.leftMenuItem.hover.background")};
+    color: ${tv("colors.leftMenuItem.hover.color")};
   }
 
   &[data-active="true"] {
-    background-color: ${getThemeValue(
-      ({ colors }) => colors.leftMenuItem.active.background
-    )};
-    color: ${getThemeValue(({ colors }) => colors.leftMenuItem.active.color)};
+    background-color: ${tv("colors.leftMenuItem.active.background")};
+    color: ${tv("colors.leftMenuItem.active.color")};
   }
 `;

@@ -5,7 +5,7 @@ export const themeLight = {
   colors: {
     text: "#14181f",
     background: "#f7faff",
-    dividerLine: "#14181f",
+    divider: { line: "#14181f" },
     primary: "#009688",
     info: "#00bcd4",
     leftMenuItem: {

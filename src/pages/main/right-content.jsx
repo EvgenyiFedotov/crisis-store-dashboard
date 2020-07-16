@@ -45,11 +45,11 @@ function PackageCard({ size, month, status, disabled }) {
         <div>{status}</div>
       </atoms.Card.RowInfo>
 
-      <StyledCardButtons>
-        <StyledDilevery type="primary" disabled={disabled}>
+      <atoms.Card.Buttons>
+        <StyledDilevery color="primary" disabled={disabled}>
           Delivery
         </StyledDilevery>
-      </StyledCardButtons>
+      </atoms.Card.Buttons>
     </atoms.Card.Container>
   );
 }
@@ -61,10 +61,4 @@ const StyledRightContent = styled(atoms.Column)`
 
 const StyledDilevery = styled(atoms.Button)`
   flex: 1;
-`;
-
-const StyledCardButtons = styled(atoms.Row)`
-  position: absolute;
-  bottom: -12px;
-  right: 12px;
 `;
