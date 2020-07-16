@@ -24,7 +24,11 @@ function Packages() {
     />
   ));
 
-  return <atoms.Row step={2}>{packages}</atoms.Row>;
+  return (
+    <atoms.Row step={2} alignItems="flex-start">
+      {packages}
+    </atoms.Row>
+  );
 }
 
 function PackageCard({ size, month, status, disabled }) {
@@ -45,12 +49,22 @@ function PackageCard({ size, month, status, disabled }) {
         <div>{status}</div>
       </atoms.Card.RowInfo>
 
-      <atoms.Card.Buttons>
-        <StyledDilevery color="primary" disabled={disabled}>
-          Delivery
-        </StyledDilevery>
-      </atoms.Card.Buttons>
+      <PackageCardButtons disabled={disabled} />
     </atoms.Card.Container>
+  );
+}
+
+function PackageCardButtons({ disabled }) {
+  if (disabled) {
+    return null;
+  }
+
+  return (
+    <atoms.Card.Buttons>
+      <StyledDilevery color="primary" disabled={disabled}>
+        Delivery
+      </StyledDilevery>
+    </atoms.Card.Buttons>
   );
 }
 
