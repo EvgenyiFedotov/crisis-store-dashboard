@@ -1,13 +1,13 @@
 import * as React from "react";
-import * as templates from "../../templates";
 import styled from "styled-components";
 import { getThemeValue, getPadding, getStep } from "../../lib/styled";
 import * as ri from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
+import * as atoms from "../../atoms";
 
 export function LeftMenu() {
   return (
-    <templates.Column>
+    <atoms.Column>
       <LeftMenuItem
         icon={<ri.RiArchiveLine />}
         title="Packages"
@@ -46,7 +46,7 @@ export function LeftMenu() {
           console.log("log-out");
         }}
       />
-    </templates.Column>
+    </atoms.Column>
   );
 }
 
@@ -56,10 +56,10 @@ function LeftMenuItem({ icon, title, to = "", value, onClick }) {
 
   return (
     <StyledLeftMenuItem to={to} onClick={onClick} data-active={active}>
-      <templates.Row>
+      <atoms.Row>
         {icon}
         <div>{title}</div>
-      </templates.Row>
+      </atoms.Row>
     </StyledLeftMenuItem>
   );
 }

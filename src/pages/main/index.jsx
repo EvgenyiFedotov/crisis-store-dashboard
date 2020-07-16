@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as templates from "../../templates";
+import * as atoms from "../../atoms";
 import styled from "styled-components";
 import { getThemeValue } from "../../lib/styled";
 
@@ -8,10 +8,10 @@ import { RightContent } from "./right-content";
 
 export function PageMain() {
   return (
-    <templates.Column step={0}>
+    <atoms.Column step={0}>
       <Header />
       <Content />
-    </templates.Column>
+    </atoms.Column>
   );
 }
 
@@ -35,7 +35,7 @@ function Content() {
 }
 
 // Styled
-const StyledHeader = styled(templates.Row)`
+const StyledHeader = styled(atoms.Row)`
   position: fixed;
   top: 0;
   left: 0;
@@ -45,7 +45,7 @@ const StyledHeader = styled(templates.Row)`
   background-color: ${getThemeValue("colors", ({ primary }) => primary)};
 `;
 
-const StyledContent = styled(templates.Row)`
+const StyledContent = styled(atoms.Row)`
   margin-top: 62px;
   align-items: flex-start;
   flex-wrap: nowrap;

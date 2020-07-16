@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import * as templates from "../../templates";
 import { useList } from "effector-react";
 import * as atoms from "../../atoms";
 import { Route } from "react-router-dom";
@@ -25,38 +24,38 @@ function Packages() {
     />
   ));
 
-  return <templates.Row step={2}>{packages}</templates.Row>;
+  return <atoms.Row step={2}>{packages}</atoms.Row>;
 }
 
 function PackageCard({ size, month, status, disabled }) {
   return (
-    <templates.Card.Container>
-      <templates.Card.RowInfo>
-        <templates.Card.TitleInfo>Size:</templates.Card.TitleInfo>
+    <atoms.Card.Container>
+      <atoms.Card.RowInfo>
+        <atoms.Card.TitleInfo>Size:</atoms.Card.TitleInfo>
         <div>{size}</div>
-      </templates.Card.RowInfo>
+      </atoms.Card.RowInfo>
 
-      <templates.Card.RowInfo>
-        <templates.Card.TitleInfo>Month:</templates.Card.TitleInfo>
+      <atoms.Card.RowInfo>
+        <atoms.Card.TitleInfo>Month:</atoms.Card.TitleInfo>
         <div>{month}</div>
-      </templates.Card.RowInfo>
+      </atoms.Card.RowInfo>
 
-      <templates.Card.RowInfo>
-        <templates.Card.TitleInfo>Status:</templates.Card.TitleInfo>
+      <atoms.Card.RowInfo>
+        <atoms.Card.TitleInfo>Status:</atoms.Card.TitleInfo>
         <div>{status}</div>
-      </templates.Card.RowInfo>
+      </atoms.Card.RowInfo>
 
       <StyledCardButtons>
         <StyledDilevery type="primary" disabled={disabled}>
           Delivery
         </StyledDilevery>
       </StyledCardButtons>
-    </templates.Card.Container>
+    </atoms.Card.Container>
   );
 }
 
 // Styled
-const StyledRightContent = styled(templates.Column)`
+const StyledRightContent = styled(atoms.Column)`
   flex: 1;
 `;
 
@@ -64,7 +63,7 @@ const StyledDilevery = styled(atoms.Button)`
   flex: 1;
 `;
 
-const StyledCardButtons = styled(templates.Row)`
+const StyledCardButtons = styled(atoms.Row)`
   position: absolute;
   bottom: -12px;
   right: 12px;
