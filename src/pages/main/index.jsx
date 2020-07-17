@@ -40,9 +40,10 @@ const StyledHeader = styled(atoms.Row)`
   top: 0;
   left: 0;
   width: 100%;
-  z-index: ${tv("zIndex.pageMainContent")};
+  z-index: ${tv("layers.pageMainContent")};
   justify-content: space-between;
   background-color: ${tv("colors.primary")};
+  color: ${tv("colors.onPrimary")};
 `;
 
 const StyledContent = styled(atoms.Row)`

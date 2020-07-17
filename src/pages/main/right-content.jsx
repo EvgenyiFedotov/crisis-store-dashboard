@@ -9,9 +9,14 @@ import * as model from "./model";
 export function RightContent() {
   return (
     <StyledRightContent>
+      <BreadCrumbs />
       <Route path="/main/packages" exact component={Packages} />
     </StyledRightContent>
   );
+}
+
+function BreadCrumbs() {
+  return null;
 }
 
 function Packages() {

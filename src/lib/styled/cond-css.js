@@ -1,12 +1,24 @@
 import { css } from "styled-components";
 
-const getHoverCss = (hoverCss) => css`
+export const getHoverStatic = (hoverCss) => css`
   &:hover {
     ${hoverCss}
   }
 `;
 
+export const getActiveStatic = (activeCss) => css`
+  &:active {
+    ${activeCss}
+  }
+`;
+
+export const getFocusStatic = (focusCss) => css`
+  &:focus {
+    ${focusCss}
+  }
+`;
+
 export function getHover(hoverCss, defaultHover = true) {
   return ({ hover = defaultHover }) =>
-    hover ? getHoverCss(hoverCss) : undefined;
+    hover ? getHoverStatic(hoverCss) : undefined;
 }

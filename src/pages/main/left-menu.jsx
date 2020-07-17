@@ -71,17 +71,17 @@ const StyledLeftMenuItem = styled(Link)`
   ${getPadding([0.5, 1])};
   border: 0;
   border-radius: ${tv("borderRadius")}px;
-  background-color: ${tv("colors.leftMenuItem.background")};
-  color: ${tv("colors.leftMenuItem.color")};
+  background-color: ${tv("colors.background")};
+  color: ${tv("colors.onBackground")};
   text-decoration: none;
 
   &:hover {
-    background-color: ${tv("colors.leftMenuItem.hover.background")};
-    color: ${tv("colors.leftMenuItem.hover.color")};
+    background-color: ${tv("colors.primary")};
+    color: ${tv("colors.onPrimary")};
   }
 
   &[data-active="true"] {
-    background-color: ${tv("colors.leftMenuItem.active.background")};
-    color: ${tv("colors.leftMenuItem.active.color")};
+    background-color: ${tv("colors.primary")};
+    color: ${tv("colors.onPrimary")};
   }
 `;

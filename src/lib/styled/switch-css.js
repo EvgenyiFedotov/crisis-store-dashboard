@@ -1,25 +1,25 @@
-export function getSize(sizes = {}) {
-  return ({ size }) => {
+export function getSize(sizes = {}, defaultSize) {
+  return ({ size = defaultSize }) => {
     switch (size) {
       case "small":
         return sizes.small;
-      case "large":
-        return sizes.large;
       case "normal":
         return size.normal;
+      case "large":
+        return sizes.large;
       default:
         return;
     }
   };
 }
 
-export function getColor(colors = {}) {
-  return ({ color }) => {
+export function getColor(colors = {}, defaultColor) {
+  return ({ color = defaultColor }) => {
     switch (color) {
       case "primary":
         return colors.primary;
-      case "info":
-        return colors.info;
+      case "secondary":
+        return colors.secondary;
       case "error":
         return colors.error;
       case "warn":

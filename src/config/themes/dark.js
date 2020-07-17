@@ -3,21 +3,21 @@ import { themeBase } from "./base";
 export const themeDark = {
   ...themeBase,
   colors: {
-    text: "#f7faff",
-    background: "#14181f",
-    divider: { line: "#f7faff" },
     primary: "#009688",
-    info: "#00bcd4",
-    leftMenuItem: {
-      background: "#00968800",
-      color: "#f7faff",
-      hover: { background: "#009688", color: "#14181f" },
-      active: { background: "#009688", color: "#14181f" },
-    },
-    packageCard: {
-      background: "#1e232b",
-      border: "#242b33",
-      hover: { background: "#242b33" },
-    },
+    primaryVariant: "#009688",
+    secondary: "#3f51b5",
+    secondaryVariant: "#3f51b5",
+
+    background: "#33333d",
+    surface: "#33333d",
+    error: "#d32f2f",
+    warn: "#f57c00",
+
+    onPrimary: "#fafafa",
+    onSecondary: "#fafafa",
+    onBackground: "#fafafa",
+    onSurface: "#fafafa",
+    onError: "#fafafa",
+    onWarn: "#fafafa",
   },
 };

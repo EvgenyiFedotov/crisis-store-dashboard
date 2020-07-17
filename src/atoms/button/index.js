@@ -1,25 +1,53 @@
 import styled, { css } from "styled-components";
-import { getSize, tv, getColor } from "../../lib/styled";
+import {
+  getSize,
+  tv,
+  getColor,
+  getStepStatic,
+  getFocusStatic,
+  getOutline,
+} from "../../lib/styled";
+import { Typography } from "../typography";
 
 const sizes = {
   small: css`
-    height: 24px;
-    font-size: ${tv("fontSize.small")}px;
+    height: ${getStepStatic(1.5)};
+    font-size: ${getStepStatic(0.75)};
+  `,
+  normal: css`
+    height: ${getStepStatic(1.875)};
+    font-size: ${getStepStatic()};
   `,
   large: css`
-    height: 34px;
-    font-size: ${tv("fontSize.large")}px;
+    height: ${getStepStatic(2.25)};
+    font-size: ${getStepStatic(1.125)};
   `,
 };
 
 const colors = {
   primary: css`
     background-color: ${tv("colors.primary")};
-    color: ${tv("colors.text")};
+    color: ${tv("colors.onPrimary")};
+
+    ${getFocusStatic(getOutline("colors.primary"))}
   `,
-  info: css`
-    background-color: ${tv("colors.info")};
-    color: ${tv("colors.text")};
+  secondary: css`
+    background-color: ${tv("colors.secondary")};
+    color: ${tv("colors.onSecondary")};
+
+    ${getFocusStatic(getOutline("colors.secondary"))}
+  `,
+  error: css`
+    background-color: ${tv("colors.error")};
+    color: ${tv("colors.onError")};
+
+    ${getFocusStatic(getOutline("colors.error"))}
+  `,
+  warn: css`
+    background-color: ${tv("colors.warn")};
+    color: ${tv("colors.onWarn")};
+
+    ${getFocusStatic(getOutline("colors.warn"))}
   `,
 };
 
@@ -30,7 +58,7 @@ const disabled = css`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(Typography.Button)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,8 +68,10 @@ export const Button = styled.button`
   padding: 4px 8px;
   height: 30px;
   cursor: pointer;
+  /* outline: 2px solid black; */
+  /* box-shadow: 0px 0px 0px 3px #000; */
 
   ${disabled}
   ${getSize(sizes)}
-  ${getColor(colors)}
+  ${getColor(colors, "primary")}
 `;

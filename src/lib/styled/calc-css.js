@@ -1,7 +1,12 @@
 import { css } from "styled-components";
+import { tv } from "./theme-value";
+
+export function getStepStatic(step = 1) {
+  return ({ theme }) => `${step * theme.step}px`;
+}
 
 export function getStep(defaultStep = 1) {
-  return ({ step = defaultStep, theme }) => `${step * theme.step}px`;
+  return ({ step = defaultStep, theme }) => getStepStatic(step)({ theme });
 }
 
 export function getPadding(defaultPadding = []) {
@@ -26,9 +31,13 @@ export function getFlexPosition(defaultValues = {}) {
   `;
 }
 
+export function getOutline(colorPath) {
+  return (props) => css`
+    box-shadow: 0px 0px 0px 4px ${tv(colorPath)(props)}50;
+  `;
+}
+
 // Added
 function getValuesByStep(values = [], theme, defaultStep = 0) {
-  const calcStep = getStep(defaultStep);
-
-  return values.map((item) => calcStep({ step: item, theme })).join(" ");
+  return values.map((item) => getStepStatic(item)({ theme })).join(" ");
 }
